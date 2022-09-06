@@ -1,3 +1,5 @@
+import 'dart:ffi';
+
 import 'package:flutter/material.dart';
 
 class MainPage extends StatefulWidget {
@@ -14,6 +16,11 @@ class MainPageState extends State<MainPage> {
     super.initState();
 
     print('init state');
+    getData();
+  }
+
+  Future<void> getData() async {
+    print('get data');
   }
 
   @override
