@@ -9,18 +9,39 @@ class MainPage extends StatefulWidget {
 
 class MainPageState extends State<MainPage> {
   @override
+  void initState() {
+    // TODO: implement initState
+    super.initState();
+
+    print('init state');
+  }
+
+  @override
   Widget build(BuildContext context) {
+    print('build');
+
     return Scaffold(
       appBar: AppBar(
         title: Text('ITem'),
       ),
       floatingActionButton: FloatingActionButton(
-        child: Icon(Icons.add),
+        child: Icon(Icons.add_alert),
         onPressed: (() {}),
       ),
       body: Column(
         children: <Widget>[
-          Text('My covid'),
+          ListTile(
+            title: Text('ผู้ติดเชื้อสะสม'),
+            subtitle: Text('0'),
+          ),
+          ListTile(
+            title: Text('ผู้ติดเชื้อสะสม'),
+            subtitle: Text('0'),
+          ),
+          ListTile(
+            title: Text('ผู้ติดเชื้อสะสม'),
+            subtitle: Text('0'),
+          )
         ],
       ),
     );
