@@ -20,7 +20,7 @@ class MainPageState extends State<MainPage> {
       ),
       body: Column(
         children: <Widget>[
-          Text('Helow'),
+          Text('My covid'),
         ],
       ),
     );
