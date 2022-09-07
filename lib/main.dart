@@ -1,6 +1,8 @@
-import 'dart:ffi';
-
 import 'package:flutter/material.dart';
+import 'package:http/http.dart' as http;
+import 'package:mycovid/data_api.dart';
+import 'dart:async';
+import 'dart:convert';
 
 class MainPage extends StatefulWidget {
   @override
@@ -21,6 +23,21 @@ class MainPageState extends State<MainPage> {
 
   Future<void> getData() async {
     print('get data');
+    //https://covid19.ddc.moph.go.th/api/Cases/today-cases-all
+
+    var Url = Uri.https('covid19.ddc.moph.go.th', '/api/Cases/today-cases-all');
+
+    var response = await http.get(Url);
+    print('----------DATA -------');
+    print(response.body);
+    dataAllFromJson(response.body);
+
+    //var result = json.decode(response.body);
+    //var v1 = result["new_case"];
+
+    // setState(() {
+    //   confirmed.text = v1;
+    // });
   }
 
   @override
